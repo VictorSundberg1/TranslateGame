@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +16,10 @@ class ViewController: UIViewController {
         print("Testing GitHub push - Hello World!")
     }
 
-
+    @IBAction func startGameButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "startGame", sender: self)
+    }
+    
+    
 }
 
