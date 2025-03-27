@@ -70,7 +70,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOz-zJ-xfy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOz-zJ-xfy">
                                 <rect key="frame" x="150" y="20" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -89,28 +89,20 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Translation" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4BO-9G-3cD">
-                                <rect key="frame" x="120" y="518" width="153" height="34"/>
+                                <rect key="frame" x="120" y="253" width="153" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WK-pu-mep">
-                                <rect key="frame" x="130" y="602" width="133" height="35"/>
+                                <rect key="frame" x="130" y="337" width="133" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Enter"/>
                                 <connections>
                                     <action selector="enterButton:" destination="eKy-5q-RM1" eventType="touchUpInside" id="wY5-CS-Hd6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQd-ft-GMz">
-                                <rect key="frame" x="120" y="787" width="153" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Reset Game"/>
-                                <connections>
-                                    <action selector="resetGame:" destination="eKy-5q-RM1" eventType="touchUpInside" id="Nhd-rb-bBd"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aE6-zd-L9D">
-                                <rect key="frame" x="120" y="438" width="153" height="30"/>
+                                <rect key="frame" x="120" y="173" width="153" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="BAQ-5G-ogJ"/>
                                 </constraints>
@@ -118,31 +110,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQd-ft-GMz">
+                                <rect key="frame" x="323" y="0.0" width="50" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Restart"/>
+                                <connections>
+                                    <action selector="resetGame:" destination="eKy-5q-RM1" eventType="touchUpInside" id="Nhd-rb-bBd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2qt-3O-VNk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="2qt-3O-VNk" firstAttribute="bottom" secondItem="rQd-ft-GMz" secondAttribute="bottom" constant="30" id="2CP-IA-CXX"/>
                             <constraint firstItem="2qt-3O-VNk" firstAttribute="trailing" secondItem="gWO-5b-zv7" secondAttribute="trailing" constant="150" id="9Y3-Iv-p68"/>
                             <constraint firstItem="4BO-9G-3cD" firstAttribute="leading" secondItem="2qt-3O-VNk" secondAttribute="leading" constant="120" id="Ckn-Oa-0kk"/>
                             <constraint firstItem="gWO-5b-zv7" firstAttribute="top" secondItem="MKN-q3-IOf" secondAttribute="bottom" constant="20" id="Ctt-0u-ffa"/>
                             <constraint firstItem="aE6-zd-L9D" firstAttribute="leading" secondItem="2qt-3O-VNk" secondAttribute="leading" constant="120" id="DnC-An-8tm"/>
+                            <constraint firstItem="2qt-3O-VNk" firstAttribute="trailing" secondItem="rQd-ft-GMz" secondAttribute="trailing" constant="20" id="Dpy-1J-B42"/>
                             <constraint firstItem="OOz-zJ-xfy" firstAttribute="leading" secondItem="2qt-3O-VNk" secondAttribute="leading" constant="150" id="FJg-ej-Kex"/>
                             <constraint firstItem="MKN-q3-IOf" firstAttribute="top" secondItem="OOz-zJ-xfy" secondAttribute="bottom" constant="20" id="H2l-d5-iht"/>
                             <constraint firstItem="2qt-3O-VNk" firstAttribute="trailing" secondItem="MKN-q3-IOf" secondAttribute="trailing" constant="150" id="Jyh-Sg-BLb"/>
-                            <constraint firstItem="rQd-ft-GMz" firstAttribute="leading" secondItem="2qt-3O-VNk" secondAttribute="leading" constant="120" id="RzP-X5-dBi"/>
+                            <constraint firstItem="rQd-ft-GMz" firstAttribute="top" secondItem="2qt-3O-VNk" secondAttribute="top" id="P1u-5F-njN"/>
+                            <constraint firstItem="aE6-zd-L9D" firstAttribute="top" secondItem="gWO-5b-zv7" secondAttribute="bottom" constant="50" id="S5L-Kd-9la"/>
                             <constraint firstItem="2qt-3O-VNk" firstAttribute="trailing" secondItem="aE6-zd-L9D" secondAttribute="trailing" constant="120" id="UBi-Qi-loU"/>
                             <constraint firstItem="9WK-pu-mep" firstAttribute="top" secondItem="4BO-9G-3cD" secondAttribute="bottom" constant="50" id="Vdd-3s-GMt"/>
-                            <constraint firstItem="rQd-ft-GMz" firstAttribute="top" secondItem="9WK-pu-mep" secondAttribute="bottom" constant="150" id="WJM-cX-vKT"/>
                             <constraint firstItem="gWO-5b-zv7" firstAttribute="leading" secondItem="2qt-3O-VNk" secondAttribute="leading" constant="150" id="WQe-cl-d5H"/>
                             <constraint firstItem="9WK-pu-mep" firstAttribute="leading" secondItem="2qt-3O-VNk" secondAttribute="leading" constant="130" id="XBs-vk-hN3"/>
                             <constraint firstItem="2qt-3O-VNk" firstAttribute="trailing" secondItem="OOz-zJ-xfy" secondAttribute="trailing" constant="150" id="aVE-Pv-Tpd"/>
-                            <constraint firstItem="OOz-zJ-xfy" firstAttribute="top" secondItem="2qt-3O-VNk" secondAttribute="top" constant="20" id="cIs-SV-jyn"/>
+                            <constraint firstItem="OOz-zJ-xfy" firstAttribute="top" secondItem="2qt-3O-VNk" secondAttribute="top" constant="20" id="bpA-P7-1hZ"/>
                             <constraint firstItem="2qt-3O-VNk" firstAttribute="trailing" secondItem="9WK-pu-mep" secondAttribute="trailing" constant="130" id="hIQ-x5-eXF"/>
                             <constraint firstItem="2qt-3O-VNk" firstAttribute="trailing" secondItem="4BO-9G-3cD" secondAttribute="trailing" constant="120" id="l3N-z5-KDo"/>
                             <constraint firstItem="4BO-9G-3cD" firstAttribute="top" secondItem="aE6-zd-L9D" secondAttribute="bottom" constant="50" id="vrt-ha-LOD"/>
                             <constraint firstItem="MKN-q3-IOf" firstAttribute="leading" secondItem="2qt-3O-VNk" secondAttribute="leading" constant="150" id="ye9-LJ-DSy"/>
-                            <constraint firstItem="2qt-3O-VNk" firstAttribute="trailing" secondItem="rQd-ft-GMz" secondAttribute="trailing" constant="120" id="zCP-6O-sSE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Lzb-Og-OyN"/>
@@ -163,11 +162,11 @@
             <objects>
                 <viewController id="VlM-qi-Vhk" customClass="HighScoreViewController" customModule="TranslateGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ae1-f6-1Tr">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TBQ-gh-Q8K">
-                                <rect key="frame" x="20" y="91" width="353" height="607"/>
+                                <rect key="frame" x="20" y="91" width="353" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScoreCell" id="DWU-Wp-Too">
@@ -181,7 +180,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfX-8k-p4j">
-                                <rect key="frame" x="130" y="718" width="133" height="35"/>
+                                <rect key="frame" x="130" y="728" width="133" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Play again"/>
                                 <connections>
@@ -233,7 +232,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gkC-CT-d1h"/>
+        <segue reference="NqY-4n-k3s"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
