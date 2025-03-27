@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -50,6 +50,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startGame()
+        answerTextField.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -166,6 +167,11 @@ class GameViewController: UIViewController {
         animation.values = [-10.0, 10.0, -10.0, 10.0, -5.0, 5.0, -2.5, 2.5, 0.0]
         answerTextField.layer.add(animation, forKey: "shake")
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        enterButton(UIButton())
+           return true
+       }
     
     @IBAction func resetGame(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
