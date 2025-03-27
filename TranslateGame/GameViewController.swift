@@ -42,7 +42,6 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         ["sol": "sun"],
         ["lampa": "light"],
         ["middag": "dinner"],
-        ["fika": "coffee break"],
         ["kaffe": "coffee"],
         ["tea": "tea"],
         ["kokos": "coconut"],
@@ -58,6 +57,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     var time : Double = 10
     var timer: Timer?
     var currentWordPair:[String:String] = [:]
+    var playerName = "Player"
     
     
     
@@ -108,10 +108,20 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         timer?.invalidate()
         
         let alert = UIAlertController(title: "Game Over", message: "Your score is \(currentScore)", preferredStyle: .alert)
+                
+        alert.addTextField{ textfield in
+            textfield.placeholder = "Enter Name"
+        }
         
         alert.addAction(UIAlertAction(title:"Play again", style: .destructive, handler: { _ in self.dismiss(animated: true)}))
         
-        alert.addAction(UIAlertAction(title: "High score", style: .default, handler: {_ in self.showHighscore()}))
+        alert.addAction(UIAlertAction(title: "High score", style: .default, handler: {_ in
+            
+            if let nameTextField = alert.textFields?.first, let text = nameTextField.text, !text.isEmpty {
+                self.playerName = text
+            }
+            
+            self.showHighscore()}))
         
         
         present(alert, animated: true)
@@ -126,6 +136,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             
            if let destinationVC = segue.destination as? HighScoreViewController {
                destinationVC.highScore = currentScore
+               destinationVC.playerName = playerName
            }
             
          

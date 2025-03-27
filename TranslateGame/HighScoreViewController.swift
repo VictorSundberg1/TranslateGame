@@ -14,15 +14,18 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     var highScore = 0
-    var highScoreArray: [Int] = []
+    var highScoreArray: [String] = []
+    var playerName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         
+        let playerString = "\(playerName) - \(highScore)"
+        
         loadHighScore()
-        highScoreArray.append(highScore)
+        highScoreArray.append(playerString)
         highScoreArray.sort(by: >)
         saveHighScore( )
         tableView.reloadData()
@@ -47,12 +50,13 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func saveHighScore() {
+        
         UserDefaults.standard.set(highScoreArray, forKey: "highScoreArray")
         
     }
     
     func loadHighScore() {
-        if let savedHighScoreArray = UserDefaults.standard.array(forKey: "highScoreArray") as? [Int] {
+        if let savedHighScoreArray = UserDefaults.standard.array(forKey: "highScoreArray") as? [String] {
             highScoreArray = savedHighScoreArray
         }
     }
