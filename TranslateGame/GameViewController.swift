@@ -54,8 +54,18 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+    
+        super.viewWillAppear(animated)
+        startGame()
+    }
+    
+    
     func startGame(){
         
+        timer?.invalidate()
+        time = 10
+        currentScore = 0
         randomizeWord()
         startTimer()
     }
@@ -163,3 +173,4 @@ class GameViewController: UIViewController {
         }
     
 }
+

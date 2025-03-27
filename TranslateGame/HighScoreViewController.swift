@@ -20,10 +20,13 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
         
+        loadHighScore()
         highScoreArray.append(highScore)
         highScoreArray.sort(by: >)
+        saveHighScore( )
+        tableView.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +42,20 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.textLabel?.text = String(highScoreArray[indexPath.row])
         return cell
     }
+     
+    @IBAction func backButton(_ sender: UIButton) { self.dismiss(animated: true)
+    }
     
+    func saveHighScore() {
+        UserDefaults.standard.set(highScoreArray, forKey: "highScoreArray")
+        
+    }
+    
+    func loadHighScore() {
+        if let savedHighScoreArray = UserDefaults.standard.array(forKey: "highScoreArray") as? [Int] {
+            highScoreArray = savedHighScoreArray
+        }
+    }
     /*
     // MARK: - Navigation
 
