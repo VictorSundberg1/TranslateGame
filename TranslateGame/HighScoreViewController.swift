@@ -22,12 +22,19 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         
-        let playerString = "\(playerName) - \(highScore)"
+        let playerString = "\(highScore)p - \(playerName)"
         
         loadHighScore()
-        highScoreArray.append(playerString)
-        highScoreArray.sort(by: >)
-        saveHighScore( )
+        
+        if playerName.isEmpty && highScore == 0{
+            return
+        } else {
+            highScoreArray.append(playerString)
+            highScoreArray.sort(by: >)
+            saveHighScore()
+        }
+        
+        
         tableView.reloadData()
         
     }
@@ -50,15 +57,24 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func saveHighScore() {
-        
         UserDefaults.standard.set(highScoreArray, forKey: "highScoreArray")
-        
     }
     
     func loadHighScore() {
         if let savedHighScoreArray = UserDefaults.standard.array(forKey: "highScoreArray") as? [String] {
             highScoreArray = savedHighScoreArray
         }
+    }
+    
+    @IBAction func clearDataButton(_ sender: UIButton) {
+        clearData()
+    }
+    
+    
+    func clearData() {
+        UserDefaults.standard.removeObject(forKey: "highScoreArray")
+        highScoreArray.removeAll()
+        tableView.reloadData()
     }
     /*
     // MARK: - Navigation

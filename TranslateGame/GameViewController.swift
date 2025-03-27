@@ -57,7 +57,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     var time : Double = 10
     var timer: Timer?
     var currentWordPair:[String:String] = [:]
-    var playerName = "Player"
+    var playerName = ""
     
     
     

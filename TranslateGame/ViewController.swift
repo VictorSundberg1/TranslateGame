@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "startGame", sender: self)
     }
     
+    @IBAction func showHighScoresButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "showHighScores", sender: self)
+    }
     
 }
 
