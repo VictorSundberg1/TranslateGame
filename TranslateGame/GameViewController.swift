@@ -36,7 +36,22 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         ["dricka": "drink"],
         ["springa": "run"],
         ["gå": "walk"],
-        ["sova": "sleep"]
+        ["sova": "sleep"],
+        ["häst": "horse"],
+        ["måne": "moon"],
+        ["sol": "sun"],
+        ["lampa": "light"],
+        ["middag": "dinner"],
+        ["fika": "coffee break"],
+        ["kaffe": "coffee"],
+        ["tea": "tea"],
+        ["kokos": "coconut"],
+        ["pommesfrites": "fries"],
+        ["pizza": "pizza"],
+        ["sushi": "sushi"],
+        ["pannkaka": "pancakes"],
+        ["choklad": "chocolate"],
+
     ]
     
     var currentScore = 0
@@ -135,8 +150,6 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
         return false
     }
-    
-    
     
     
     
