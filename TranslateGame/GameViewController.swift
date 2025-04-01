@@ -44,13 +44,10 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         ["middag": "dinner"],
         ["kaffe": "coffee"],
         ["tea": "tea"],
-        ["kokos": "coconut"],
-        ["pommesfrites": "fries"],
         ["pizza": "pizza"],
         ["sushi": "sushi"],
-        ["pannkaka": "pancakes"],
+        ["pannkaka": "pancake"],
         ["choklad": "chocolate"],
-
     ]
     
     var currentScore = 0
@@ -94,7 +91,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             
             self.time -= 0.1
             
-            self.timerLabel.text = "Time : \(Int(self.time))"
+            self.timerLabel.text = "Time : \(Int(self.time))s"
             
             if self.time <= 0 {
                 endGame()

@@ -97,7 +97,6 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
         celebrationLabel.center = CGPoint(x: view.center.x, y: -50) // Start above the screen
         view.addSubview(celebrationLabel)
         
-        // Rest of the animation code remains the same
         UIView.animate(withDuration: 0.7, delay: 0.3, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: [], animations: {
             celebrationLabel.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 100)
         }, completion: { _ in
